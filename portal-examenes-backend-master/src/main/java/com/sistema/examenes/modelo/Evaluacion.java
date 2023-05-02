@@ -19,6 +19,8 @@ public class Evaluacion {
     private boolean activo = false;
     @ManyToOne(fetch = FetchType.EAGER)
     private Principio principio;
+    @OneToOne
+    private Usuario usuario;
     @OneToMany(mappedBy = "evaluacion", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JsonIgnore
     private Set<Pregunta> preguntas = new HashSet<>();
@@ -77,6 +79,14 @@ public class Evaluacion {
 
     public void setPreguntas(Set<Pregunta> preguntas) {
         this.preguntas = preguntas;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     public Evaluacion() {

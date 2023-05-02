@@ -1,6 +1,6 @@
 package com.sistema.examenes.controladores;
 
-import com.sistema.examenes.configuraciones.JwtUtils;
+import com.sistema.examenes.servicios.configuraciones.JwtUtils;
 import com.sistema.examenes.excepciones.UsuarioNotFoundException;
 import com.sistema.examenes.modelo.JwtRequest;
 import com.sistema.examenes.modelo.JwtResponse;

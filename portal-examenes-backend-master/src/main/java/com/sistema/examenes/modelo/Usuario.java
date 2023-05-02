@@ -26,6 +26,8 @@ public class Usuario implements UserDetails {
     private boolean enabled = true;
     private String perfil;
 
+    @OneToOne(mappedBy = "usuario")
+    private Evaluacion evaluacion;
     @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy = "usuario")
     @JsonIgnore
     private Set<UsuarioRol> usuarioRoles = new HashSet<>();
@@ -144,6 +146,14 @@ public class Usuario implements UserDetails {
 
     public Set<UsuarioRol> getUsuarioRoles() {
         return usuarioRoles;
+    }
+
+    public Evaluacion getEvaluacion() {
+        return evaluacion;
+    }
+
+    public void setEvaluacion(Evaluacion evaluacion) {
+        this.evaluacion = evaluacion;
     }
 
     public void setUsuarioRoles(Set<UsuarioRol> usuarioRoles) {

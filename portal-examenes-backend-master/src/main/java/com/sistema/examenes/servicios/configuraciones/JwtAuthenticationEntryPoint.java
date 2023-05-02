@@ -1,4 +1,4 @@
-package com.sistema.examenes.configuraciones;
+package com.sistema.examenes.servicios.configuraciones;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;

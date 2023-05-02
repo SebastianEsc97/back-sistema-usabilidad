@@ -1,4 +1,4 @@
-package com.sistema.examenes.configuraciones;
+package com.sistema.examenes.servicios.configuraciones;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

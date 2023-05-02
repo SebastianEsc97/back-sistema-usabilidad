@@ -1,4 +1,4 @@
-package com.sistema.examenes.configuraciones;
+package com.sistema.examenes.servicios.configuraciones;
 
 import com.sistema.examenes.servicios.impl.UserDetailsServiceImpl;
 import io.jsonwebtoken.ExpiredJwtException;
