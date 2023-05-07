@@ -35,6 +35,8 @@ public class Usuario implements UserDetails, Serializable {
     @JsonIgnore
     private Set<UsuarioRol> usuarioRoles = new HashSet<>();
 
+
+
     public Usuario(){
 
     }
