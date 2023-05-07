@@ -1,17 +1,19 @@
 package com.sistema.examenes.modelo;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "usuarios")
-public class Usuario implements UserDetails {
+public class Usuario implements UserDetails, Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,8 +28,9 @@ public class Usuario implements UserDetails {
     private boolean enabled = true;
     private String perfil;
 
-    @OneToOne(mappedBy = "usuario")
-    private Evaluacion evaluacion;
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "usuario")
+    @JsonIgnore
+    private Set<Evaluacion> evaluacion;
     @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy = "usuario")
     @JsonIgnore
     private Set<UsuarioRol> usuarioRoles = new HashSet<>();
@@ -148,11 +151,11 @@ public class Usuario implements UserDetails {
         return usuarioRoles;
     }
 
-    public Evaluacion getEvaluacion() {
+    public Set<Evaluacion> getEvaluacion() {
         return evaluacion;
     }
 
-    public void setEvaluacion(Evaluacion evaluacion) {
+    public void setEvaluacion(Set<Evaluacion> evaluacion) {
         this.evaluacion = evaluacion;
     }
 

@@ -3,6 +3,7 @@ package com.sistema.examenes.modelo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -14,9 +15,14 @@ public class Principio {
     private Long principioId;
     private String titulo;
     private String descripcion;
-    @OneToMany(mappedBy = "principio",cascade = CascadeType.ALL)
+
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "principio")
     @JsonIgnore
-    private Set<Evaluacion> evaluaciones = new LinkedHashSet<>();
+    private Set<PrincipiosEvaluaciones> principiosEvaluaciones = new HashSet<>();
+
+    public Principio(Long principioId) {
+        this.principioId = principioId;
+    }
 
     public Long getPrincipioId() {
         return principioId;
@@ -38,17 +44,7 @@ public class Principio {
         return descripcion;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public Set<Evaluacion> getEvaluaciones() {
-        return evaluaciones;
-    }
-
-    public void setEvaluaciones(Set<Evaluacion> evaluaciones) {
-        this.evaluaciones = evaluaciones;
-    }
+    public void setDescripcion(String descripcion) {this.descripcion = descripcion;}
 
     public Principio( ) {
     }

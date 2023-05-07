@@ -1,8 +1,7 @@
 package com.sistema.examenes.servicios.impl;
 
 import com.sistema.examenes.modelo.Evaluacion;
-import com.sistema.examenes.modelo.Pregunta;
-import com.sistema.examenes.repositorios.PreguntaRepository;
+//import com.sistema.examenes.repositorios.PreguntaRepository;
 import com.sistema.examenes.servicios.PreguntaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,7 +11,7 @@ import java.util.Set;
 @Service
 public class PreguntaServiceImpl implements PreguntaService {
 
-    @Autowired
+   /* @Autowired
     private PreguntaRepository preguntaRepository;
     @Override
     public Pregunta agregarPregunta(Pregunta pregunta) {
@@ -36,7 +35,7 @@ public class PreguntaServiceImpl implements PreguntaService {
 
     @Override
     public Set<Pregunta> obtenerPreguntasDelExamen(Evaluacion evaluacion) {
-        return preguntaRepository.findByEvaluacion(evaluacion);
+        return null;
     }
 
     @Override
@@ -44,5 +43,5 @@ public class PreguntaServiceImpl implements PreguntaService {
         Pregunta pregunta = new Pregunta();
         pregunta.setPreguntaId(preguntaId);
         preguntaRepository.delete(pregunta);
-    }
+    }*/
 }

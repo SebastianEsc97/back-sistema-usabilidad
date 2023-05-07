@@ -1,10 +1,15 @@
 package com.sistema.examenes.controladores;
 
 import com.sistema.examenes.modelo.Evaluacion;
+import com.sistema.examenes.modelo.Usuario;
 import com.sistema.examenes.servicios.EvaluacionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/evaluacion")
@@ -28,6 +33,13 @@ public class EvaluacionController {
         return ResponseEntity.ok(evaluacionService.obtenerEvaluaciones());
     }
 
+    @GetMapping("/usuario/{usuarioId}")
+    public List<Evaluacion> evaluacionPorUsuario(@PathVariable("usuarioId") Long usuarioId){
+        Usuario usuario= new Usuario();
+        usuario.setId(usuarioId);
+      return  evaluacionService.obtenerPorUsuario(usuario);
+    }
+
     @GetMapping("/{evaluacionId}")
     public Evaluacion listarEvaluacion(@PathVariable("evaluacionId") Long evaluacionId){
         return evaluacionService.obtenerEvaluacion(evaluacionId);
@@ -37,6 +49,9 @@ public class EvaluacionController {
     public void eliminarEvaluacion(@PathVariable("evaluacionId") Long evaluacionId){
         evaluacionService.eliminarEvaluacion(evaluacionId);
     }
+
+
+
 /*
     @GetMapping("/categoria/{categoriaId}")
     public List<Evaluacion> listarEvaluacionesDeUnaCategoria(@PathVariable("categoriaId") Long categoriaId){

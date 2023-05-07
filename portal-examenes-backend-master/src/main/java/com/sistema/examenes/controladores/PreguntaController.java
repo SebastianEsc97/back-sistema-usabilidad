@@ -1,14 +1,10 @@
 package com.sistema.examenes.controladores;
 
-import com.sistema.examenes.modelo.Evaluacion;
-import com.sistema.examenes.modelo.Pregunta;
 import com.sistema.examenes.servicios.EvaluacionService;
 import com.sistema.examenes.servicios.PreguntaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.*;
 
 @RestController
 @RequestMapping("/pregunta")
@@ -20,12 +16,12 @@ public class PreguntaController {
     @Autowired
     private EvaluacionService evaluacionService;
 
-    @PostMapping("/")
+    /*@PostMapping("/")
     public ResponseEntity<Pregunta> guardarPregunta(@RequestBody Pregunta pregunta) {
         return ResponseEntity.ok(preguntaService.agregarPregunta(pregunta));
     }
 
-    @PutMapping("/")
+    @PutMapping("/{preguntaId}")
     public ResponseEntity<Pregunta> actualizarPregunta(@RequestBody Pregunta pregunta) {
         return ResponseEntity.ok(preguntaService.actualizarPregunta(pregunta));
     }
@@ -45,10 +41,10 @@ public class PreguntaController {
     @GetMapping("/{preguntaId}")
     public Pregunta listarPreguntaPorId(@PathVariable("preguntaId") Long preguntaId){
         return preguntaService.obtenerPregunta(preguntaId);
-    }
+    }*/
 
-    @DeleteMapping("/{preguntaId}")
+    /*@DeleteMapping("/{preguntaId}")
     public void eliminarPregunta(@PathVariable("preguntaId") Long preguntaId){
         preguntaService.eliminarPregunta(preguntaId);
-    }
+    }*/
 }

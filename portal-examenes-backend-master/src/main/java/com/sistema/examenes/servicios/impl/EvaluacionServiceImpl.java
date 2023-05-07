@@ -1,12 +1,17 @@
 package com.sistema.examenes.servicios.impl;
 
 import com.sistema.examenes.modelo.Evaluacion;
+import com.sistema.examenes.modelo.Usuario;
 import com.sistema.examenes.repositorios.EvaluacionRepository;
 import com.sistema.examenes.servicios.EvaluacionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -33,6 +38,12 @@ public class EvaluacionServiceImpl implements EvaluacionService {
     public Evaluacion obtenerEvaluacion(Long evaluacionId) {
         return evaluacionRepository.findById(evaluacionId).get();
     }
+
+    @Override
+    public List<Evaluacion> obtenerPorUsuario(Usuario usuario) {
+        return this.evaluacionRepository.findByUsuario(usuario);
+    }
+
 
     @Override
     public void eliminarEvaluacion(Long evaluacionId) {
