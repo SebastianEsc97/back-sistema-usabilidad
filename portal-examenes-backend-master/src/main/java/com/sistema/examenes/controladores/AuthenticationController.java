@@ -38,7 +38,6 @@ public class AuthenticationController {
             exception.printStackTrace();
             throw new Exception("Usuario no encontrado");
         }
-
         UserDetails userDetails =  this.userDetailsService.loadUserByUsername(jwtRequest.getUsername());
         String token = this.jwtUtils.generateToken(userDetails);
         return ResponseEntity.ok(new JwtResponse(token));

@@ -9,7 +9,7 @@ import java.util.Set;
 public class PrincipiosEvaluaciones {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long principiosEvaluacinesId;
+    private Long principiosEvaluacionesId;
 
     private Long respuesta;
 
@@ -19,12 +19,12 @@ public class PrincipiosEvaluaciones {
     @ManyToOne(fetch = FetchType.EAGER)
     private Principio principio;
 
-    public Long getPrincipiosEvaluacinesId() {
-        return principiosEvaluacinesId;
+    public Long getPrincipiosEvaluacionesId() {
+        return principiosEvaluacionesId;
     }
 
-    public void setPrincipiosEvaluacinesId(Long principiosEvaluacinesId) {
-        this.principiosEvaluacinesId = principiosEvaluacinesId;
+    public void setPrincipiosEvaluacionesId(Long principiosEvaluacionesId) {
+        this.principiosEvaluacionesId = principiosEvaluacionesId;
     }
 
     public long getRespuesta() {
