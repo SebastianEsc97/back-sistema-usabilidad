@@ -1,6 +1,7 @@
 package com.sistema.examenes.controladores;
 
 import com.sistema.examenes.modelo.Evaluacion;
+import com.sistema.examenes.modelo.Principio;
 import com.sistema.examenes.modelo.Usuario;
 import com.sistema.examenes.servicios.EvaluacionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +25,8 @@ public class EvaluacionController {
     }
 
     @PutMapping("/")
-    public ResponseEntity<Evaluacion> actualizarEvaluacion(@RequestBody Evaluacion evaluacion){
-        return ResponseEntity.ok(evaluacionService.actualizarEvaluacion(evaluacion));
+    public Evaluacion actualizarEvaluacion(@RequestBody Evaluacion evaluacion){
+        return evaluacionService.actualizarEvaluacion(evaluacion);
     }
 
     @GetMapping("/")

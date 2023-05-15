@@ -13,6 +13,8 @@ public class PrincipiosEvaluaciones {
 
     private Long respuesta;
 
+    private String comentario;
+
     @ManyToOne(fetch = FetchType.EAGER)
     private Evaluacion evaluacion;
 
@@ -49,5 +51,17 @@ public class PrincipiosEvaluaciones {
 
     public void setPrincipio(Principio principio) {
         this.principio = principio;
+    }
+
+    public void setRespuesta(Long respuesta) {
+        this.respuesta = respuesta;
+    }
+
+    public String getComentario() {
+        return comentario;
+    }
+
+    public void setComentario(String comentario) {
+        this.comentario = comentario;
     }
 }
