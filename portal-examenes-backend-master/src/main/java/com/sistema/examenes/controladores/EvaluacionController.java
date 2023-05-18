@@ -24,6 +24,11 @@ public class EvaluacionController {
         return ResponseEntity.ok(evaluacionService.agregarEvaluacion(evaluacion));
     }
 
+//    @PutMapping("/")
+//    public ResponseEntity<Evaluacion> actualizarEvaluacion(@RequestBody Evaluacion evaluacion){
+//        return ResponseEntity.ok(evaluacionService.actualizarEvaluacion(evaluacion));
+ //   }
+
     @PutMapping("/")
     public Evaluacion actualizarEvaluacion(@RequestBody Evaluacion evaluacion){
         return evaluacionService.actualizarEvaluacion(evaluacion);
