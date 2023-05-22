@@ -5,6 +5,7 @@ import com.sistema.examenes.modelo.Usuario;
 import com.sistema.examenes.modelo.UsuarioRol;
 import com.sistema.examenes.servicios.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
@@ -48,4 +49,18 @@ public class UsuarioController {
         usuarioService.eliminarUsuario(usuarioId);
     }
 
+    @PutMapping("/")
+    public Usuario actualizarUsuario(@RequestBody Usuario usuario){
+        return usuarioService.actualizarUsuario(usuario);
+    }
+
+    @GetMapping("/")
+    public ResponseEntity<?> listarusuarios(){
+        return ResponseEntity.ok(usuarioService.obtenerUsuarios());
+    }
+
+    @GetMapping("/{usuarioId}")
+    public Usuario listarUsuarioPorId(@PathVariable("usuarioId") Long usuarioId){
+        return usuarioService.obtenerUsuario(usuarioId);
+    }
 }

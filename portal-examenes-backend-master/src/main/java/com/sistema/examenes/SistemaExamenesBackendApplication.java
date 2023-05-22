@@ -37,6 +37,7 @@ public class SistemaExamenesBackendApplication implements CommandLineRunner {
 			usuario.setEmail("escobar.sebastian.97@gmail.com");
 			usuario.setTelefono("3017215913");
 			usuario.setPerfil("foto.png");
+			usuario.setDescripcion("El usuario administrador es el que gestiona los principios de usabilidad y agrega y gestiona los usuarios expertos");
 			Rol rol = new Rol();
 			rol.setRolId(1L);
 			rol.setRolNombre("ADMIN");

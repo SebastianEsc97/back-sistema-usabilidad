@@ -12,4 +12,12 @@ public interface UsuarioService {
     public Usuario obtenerUsuario(String username);
 
     public void eliminarUsuario(Long usuarioId);
+
+    Set<Usuario> obtenerUsuarios();
+
+    Usuario actualizarUsuario(Usuario usuario);
+
+    Usuario obtenerUsuario(Long usuarioId);
+
+
 }

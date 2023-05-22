@@ -27,6 +27,7 @@ public class Usuario implements UserDetails, Serializable {
     private String telefono;
     private boolean enabled = true;
     private String perfil;
+    private String descripcion;
 
     @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "usuario")
     @JsonIgnore
@@ -41,7 +42,7 @@ public class Usuario implements UserDetails, Serializable {
 
     }
 
-    public Usuario(Long id, String username, String password, String nombre, String apellido, String email, String telefono, boolean enabled, String perfil) {
+    public Usuario(Long id, String username, String password, String nombre, String apellido, String email, String telefono, boolean enabled, String perfil, String descripcion) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -51,6 +52,7 @@ public class Usuario implements UserDetails, Serializable {
         this.telefono = telefono;
         this.enabled = enabled;
         this.perfil = perfil;
+        this.descripcion = descripcion;
     }
 
     public Long getId() {
@@ -163,5 +165,13 @@ public class Usuario implements UserDetails, Serializable {
 
     public void setUsuarioRoles(Set<UsuarioRol> usuarioRoles) {
         this.usuarioRoles = usuarioRoles;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 }
