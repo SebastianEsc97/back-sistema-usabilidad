@@ -15,6 +15,7 @@ public class Principio {
     private Long principioId;
     private String titulo;
     private String descripcion;
+    private Boolean activo= true;
 
     @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "principio")
     @JsonIgnore
@@ -45,6 +46,14 @@ public class Principio {
     }
 
     public void setDescripcion(String descripcion) {this.descripcion = descripcion;}
+
+    public Boolean getActivo() {
+        return activo;
+    }
+
+    public void setActivo(Boolean activo) {
+        this.activo = activo;
+    }
 
     public Principio( ) {
     }
