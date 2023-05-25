@@ -24,8 +24,8 @@ public class PrincipiosEvaluacionesController {
     }
 
     @PutMapping("/")
-    public ResponseEntity<PrincipiosEvaluaciones> actualizar(@RequestBody PrincipiosEvaluaciones principiosEvaluaciones){
-        return ResponseEntity.ok(principiosEvaluacionesService.actualizarPrincipioEvaluacion(principiosEvaluaciones));
+    public PrincipiosEvaluaciones actualizarEvaluacion(@RequestBody PrincipiosEvaluaciones principiosEvaluaciones){
+        return principiosEvaluacionesService.actualizarPrincipioEvaluacion(principiosEvaluaciones);
     }
 
     @GetMapping("/evaluacion/{evaluacionId}")

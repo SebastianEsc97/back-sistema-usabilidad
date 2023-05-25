@@ -59,7 +59,7 @@ public class UsuarioController {
         return ResponseEntity.ok(usuarioService.obtenerUsuarios());
     }
 
-    @GetMapping("/{usuarioId}")
+    @GetMapping("/listarPorId/{usuarioId}")
     public Usuario listarUsuarioPorId(@PathVariable("usuarioId") Long usuarioId){
         return usuarioService.obtenerUsuario(usuarioId);
     }
