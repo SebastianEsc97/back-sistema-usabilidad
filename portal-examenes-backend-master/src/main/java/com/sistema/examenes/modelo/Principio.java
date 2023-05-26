@@ -13,7 +13,9 @@ public class Principio {
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     private Long principioId;
+    @Column(columnDefinition = "VARCHAR(1000)")
     private String titulo;
+    @Column(columnDefinition = "VARCHAR(1000)")
     private String descripcion;
     private Boolean activo= true;
 

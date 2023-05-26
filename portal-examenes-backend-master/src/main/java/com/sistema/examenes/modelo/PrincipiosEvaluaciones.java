@@ -12,7 +12,7 @@ public class PrincipiosEvaluaciones {
     private Long principiosEvaluacionesId;
 
     private Long respuesta;
-
+    @Column(columnDefinition = "VARCHAR(1000)")
     private String comentario;
 
     @ManyToOne(fetch = FetchType.EAGER)

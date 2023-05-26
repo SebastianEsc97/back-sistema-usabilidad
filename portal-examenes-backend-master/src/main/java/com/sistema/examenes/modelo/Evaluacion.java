@@ -14,9 +14,11 @@ public class Evaluacion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long evaluacionId;
-
+    @Column(columnDefinition = "VARCHAR(1000)")
     private String url;
+    @Column(columnDefinition = "VARCHAR(1000)")
     private String titulo;
+    @Column(columnDefinition = "VARCHAR(1000)")
     private String descripcion;
     private boolean activo = true;
 
@@ -26,7 +28,7 @@ public class Evaluacion {
     @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "evaluacion")
     @JsonIgnore
     private Set<PrincipiosEvaluaciones> principiosEvaluaciones = new HashSet<>();
-
+    @Column(columnDefinition = "VARCHAR(1000)")
     private String comentario;
 
     public Evaluacion(Long evaluacionId) {

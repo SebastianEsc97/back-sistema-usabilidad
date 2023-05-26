@@ -27,6 +27,7 @@ public class Usuario implements UserDetails, Serializable {
     private String telefono;
     private boolean enabled = true;
     private String perfil;
+    @Column(columnDefinition = "VARCHAR(1000)")
     private String descripcion;
 
     @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "usuario")
