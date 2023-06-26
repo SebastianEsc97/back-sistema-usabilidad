@@ -21,6 +21,8 @@ public class PrincipiosEvaluaciones {
     @ManyToOne(fetch = FetchType.EAGER)
     private Principio principio;
 
+    private Boolean estado;
+
     public Long getPrincipiosEvaluacionesId() {
         return principiosEvaluacionesId;
     }
@@ -63,5 +65,13 @@ public class PrincipiosEvaluaciones {
 
     public void setComentario(String comentario) {
         this.comentario = comentario;
+    }
+
+    public Boolean getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Boolean estado) {
+        this.estado = estado;
     }
 }
