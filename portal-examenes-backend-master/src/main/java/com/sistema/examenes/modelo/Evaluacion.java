@@ -6,6 +6,9 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.Date;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "evaluaciones")
@@ -20,6 +23,12 @@ public class Evaluacion {
     private String titulo;
     @Column(columnDefinition = "VARCHAR(1000)")
     private String descripcion;
+    @Column
+    @Temporal(TemporalType.DATE)
+    private Date fecha;
+    @Column
+    @Temporal(TemporalType.DATE)
+    private Date ultimaFecha;
     private boolean activo = true;
 
     @ManyToOne(fetch = FetchType.EAGER)
@@ -98,6 +107,22 @@ public class Evaluacion {
 
     public void setComentario(String comentario) {
         this.comentario = comentario;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public Date getUltimaFecha() {
+        return ultimaFecha;
+    }
+
+    public void setUltimaFecha(Date ultimaFecha) {
+        this.ultimaFecha = ultimaFecha;
     }
 
     public Evaluacion() {
