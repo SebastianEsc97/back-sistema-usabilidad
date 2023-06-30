@@ -24,10 +24,10 @@ public class Evaluacion {
     @Column(columnDefinition = "VARCHAR(1000)")
     private String descripcion;
     @Column
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date fecha;
     @Column
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date ultimaFecha;
     private boolean activo = true;
 
